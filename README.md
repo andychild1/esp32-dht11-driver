@@ -39,3 +39,34 @@ Implemented with pure bit-banging (no interrupts), optimized for stability and t
 
 ```c
 #include "dht11.h"
+```
+
+## Usage Example
+
+```c
+#include "dht11.h"
+#include "esp_log.h"
+
+static const char* TAG = "DHT11";
+
+void app_main(void)
+{
+    dht11_t sensor;
+    uint8_t temperature, humidity;
+
+    // Initialize the sensor on GPIO 4
+    if (dht11_init(&sensor, GPIO_NUM_4) != DHT11_OK) {
+        ESP_LOGE(TAG, "DHT11 initialization error");
+        return;
+    }
+
+    while (1) {
+        if (dht11_read(&sensor, &temperature, &humidity) == DHT11_OK) {
+            ESP_LOGI(TAG, "Humidity: %d%%  Temperature: %d°C", humidity, temperature);
+        } else {
+            ESP_LOGW(TAG, "DHT11 read error");
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(2000));  // Read every 2 seconds (DHT11 requires at least 1s between readings)
+    }
+}
