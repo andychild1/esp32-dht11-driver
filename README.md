@@ -70,3 +70,9 @@ void app_main(void)
         vTaskDelay(pdMS_TO_TICKS(2000));  // Read every 2 seconds (DHT11 requires at least 1s between readings)
     }
 }
+```
+## Error Codes
+- `DHT11_OK`: Success
+- `DHT11_ERR_NULL_PTR`: Null pointer
+- `DHT11_ERR_TIMEOUT_*`: Timeout during handshake or bit reading
+- `DHT11_ERR_CHECKSUM`: Invalid checksum
