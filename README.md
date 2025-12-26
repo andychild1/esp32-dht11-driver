@@ -1,8 +1,8 @@
 # ESP32 DHT11 Driver
 
+[![ESP-IDF CI](https://github.com/andychild1/esp32-dht11-driver/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/andychild1/esp32-dht11-driver/actions/workflows/c-cpp.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![ESP-IDF](https://img.shields.io/badge/ESP--IDF-v5.x-blue.svg)](https://docs.espressif.com/projects/esp-idf/en/latest/)
-[![ESP-IDF CI](https://github.com/andychild1/esp32-dht11-driver/actions/workflows/build.yml/badge.svg)](https://github.com/andychild1/esp32-dht11-driver/actions/workflows/build.yml)
 [![C](https://img.shields.io/badge/Language-C-green.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
 
 A simple, robust, and reliable driver for reading data from the **DHT11** temperature and humidity sensor on ESP32 using ESP-IDF.  
