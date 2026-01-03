@@ -63,6 +63,13 @@ void start()
 
 void app_main(void)
 {
-    start();
+    xTaskCreate(
+        start,
+        "start",
+        configMINIMAL_STACK_SIZE * 3,
+        NULL,
+        5,
+        NULL
+    );
 }
 
